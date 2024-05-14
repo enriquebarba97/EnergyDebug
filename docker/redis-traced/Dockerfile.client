@@ -1,0 +1,14 @@
+ARG REQUESTS=10000
+ARG KEYSPACE=1000
+
+FROM redis@sha256:9c8c3268cbe8925e2e4485ca0e48a42ff82393e2ec4c4026534fe3f4dd7d6786
+
+RUN apt-get update && apt-get install -y redis-tools
+
+ARG REQUESTS
+ARG KEYSPACE
+
+ENV REQUESTS=${REQUESTS}
+ENV KEYSPACE=${KEYSPACE}
+
+CMD redis-benchmark -n ${REQUESTS} -r ${KEYSPACE} -h localhost -p 6379 -t lrange

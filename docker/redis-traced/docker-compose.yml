@@ -1,0 +1,35 @@
+services:
+    redis-server:
+        image: redis-server-traced
+        container_name: redis-server
+        cpuset: "0"
+        build:
+            context: '${PWD}/docker/redis-traced'
+            dockerfile: '${PWD}/docker/redis-traced/Dockerfile'
+            args:
+                - BASE=ubuntu@sha256:b060fffe8e1561c9c3e6dea6db487b900100fc26830b9ea2ec966c151ab4c020
+            network: host
+        volumes:
+            - '${PWD}/data/redis-server/traces:/traces'
+        ports:
+            - '6379:6379'
+        healthcheck:
+            test: ['CMD', 'redis-cli', 'ping']
+            interval: 10s
+            retries: 20
+            start_period: 5s
+            timeout: 10s
+    client:
+        image: redis-benchmark
+        cpuset: "2"
+        build:
+            context: '${PWD}/docker/redis-traced'
+            dockerfile: '${PWD}/docker/redis-traced/Dockerfile.client'
+            args:
+                - REQUESTS=2500
+                - KEYSPACE=1000
+            network: host
+        network_mode: host
+        depends_on:
+            redis-server:
+                condition: service_healthy
