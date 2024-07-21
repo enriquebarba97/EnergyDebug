@@ -1,0 +1,138 @@
+Started at Sat, 06 Apr 2024 23:16:51 +0200
+CMD: NAME=ubuntu FILE= IMAGE=ubuntu@sha256:b060fffe8e1561c9c3e6dea6db487b900100fc26830b9ea2ec966c151ab4c020 ISOLATE_CPU=0 BACKGROUND_CPU=1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23 THREADS_CPU=1 LTRACE=false /home/tdurieux/git/EnergiBridge/target/release/energibridge -i 100 -o results/experiment-20240406T195625/postgres-server/ubuntu@sha256b060fffe8e1561c9c3e6dea6db487b900100fc26830b9ea2ec966c151ab4c020/run-31.tsv -- docker compose -f workloads/postgres-server/docker-compose.yml up  --abort-on-container-exit 
+
+
+ Container postgres-server  Creating
+ Container postgres-server  Created
+ Container postgres-server-client-1  Creating
+ Container postgres-server-client-1  Created
+1712438213 Attaching to postgres-server, postgres-server-client-1
+1712438213 postgres-server           | The files belonging to this database system will be owned by user "postgres".
+1712438213 postgres-server           | This user must also own the server process.
+1712438213 postgres-server           | 
+1712438213 postgres-server           | The database cluster will be initialized with locale "C".
+1712438213 postgres-server           | The default database encoding has accordingly been set to "SQL_ASCII".
+1712438213 postgres-server           | The default text search configuration will be set to "english".
+1712438213 postgres-server           | 
+1712438213 postgres-server           | Data page checksums are disabled.
+1712438213 postgres-server           | 
+1712438213 postgres-server           | fixing permissions on existing directory /var/lib/postgresql/15/main ... ok
+1712438213 postgres-server           | creating subdirectories ... ok
+1712438213 postgres-server           | selecting dynamic shared memory implementation ... posix
+1712438213 postgres-server           | selecting default max_connections ... 100
+1712438213 postgres-server           | selecting default shared_buffers ... 128MB
+1712438213 postgres-server           | selecting default time zone ... Europe/Amsterdam
+1712438213 postgres-server           | creating configuration files ... ok
+1712438213 postgres-server           | running bootstrap script ... ok
+1712438213 postgres-server           | performing post-bootstrap initialization ... ok
+postgres-server           | initdb: warning: enabling "trust" authentication for local connections
+postgres-server           | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+1712438213 postgres-server           | syncing data to disk ... ok
+1712438213 postgres-server           | 
+1712438213 postgres-server           | 
+1712438213 postgres-server           | Success. You can now start the database server using:
+1712438213 postgres-server           | 
+1712438213 postgres-server           |     pg_ctl -D /var/lib/postgresql/15/main -l logfile start
+1712438213 postgres-server           | 
+postgres-server           | 2024-04-06 23:16:53.835 CEST [21] LOG:  starting PostgreSQL 15.4 (Ubuntu 15.4-1.pgdg22.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+postgres-server           | 2024-04-06 23:16:53.836 CEST [21] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-server           | 2024-04-06 23:16:53.836 CEST [21] LOG:  listening on IPv6 address "::", port 5432
+postgres-server           | 2024-04-06 23:16:53.841 CEST [21] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-server           | 2024-04-06 23:16:53.847 CEST [25] LOG:  database system was shut down at 2024-04-06 23:16:53 CEST
+postgres-server           | 2024-04-06 23:16:53.855 CEST [21] LOG:  database system is ready to accept connections
+postgres-server-client-1  | dropping old tables...
+postgres-server-client-1  | NOTICE:  table "pgbench_accounts" does not exist, skipping
+postgres-server-client-1  | NOTICE:  table "pgbench_branches" does not exist, skipping
+postgres-server-client-1  | NOTICE:  table "pgbench_history" does not exist, skipping
+postgres-server-client-1  | NOTICE:  table "pgbench_tellers" does not exist, skipping
+postgres-server-client-1  | creating tables...
+postgres-server-client-1  | generating data (client-side)...
+postgres-server-client-1  | 100000 of 5000000 tuples (2%) done (elapsed 0.01 s, remaining 0.34 s)
+postgres-server-client-1  | 200000 of 5000000 tuples (4%) done (elapsed 0.02 s, remaining 0.39 s)
+postgres-server-client-1  | 300000 of 5000000 tuples (6%) done (elapsed 0.10 s, remaining 1.63 s)
+postgres-server-client-1  | 400000 of 5000000 tuples (8%) done (elapsed 0.19 s, remaining 2.19 s)
+postgres-server-client-1  | 500000 of 5000000 tuples (10%) done (elapsed 0.26 s, remaining 2.33 s)
+postgres-server-client-1  | 600000 of 5000000 tuples (12%) done (elapsed 0.31 s, remaining 2.31 s)
+postgres-server-client-1  | 700000 of 5000000 tuples (14%) done (elapsed 0.39 s, remaining 2.39 s)
+postgres-server-client-1  | 800000 of 5000000 tuples (16%) done (elapsed 0.51 s, remaining 2.70 s)
+postgres-server-client-1  | 900000 of 5000000 tuples (18%) done (elapsed 0.58 s, remaining 2.63 s)
+postgres-server-client-1  | 1000000 of 5000000 tuples (20%) done (elapsed 0.65 s, remaining 2.60 s)
+postgres-server-client-1  | 1100000 of 5000000 tuples (22%) done (elapsed 0.73 s, remaining 2.58 s)
+postgres-server-client-1  | 1200000 of 5000000 tuples (24%) done (elapsed 0.85 s, remaining 2.69 s)
+postgres-server-client-1  | 1300000 of 5000000 tuples (26%) done (elapsed 0.91 s, remaining 2.59 s)
+postgres-server-client-1  | 1400000 of 5000000 tuples (28%) done (elapsed 0.98 s, remaining 2.52 s)
+postgres-server-client-1  | 1500000 of 5000000 tuples (30%) done (elapsed 1.04 s, remaining 2.42 s)
+postgres-server-client-1  | 1600000 of 5000000 tuples (32%) done (elapsed 1.16 s, remaining 2.46 s)
+postgres-server-client-1  | 1700000 of 5000000 tuples (34%) done (elapsed 1.22 s, remaining 2.37 s)
+postgres-server-client-1  | 1800000 of 5000000 tuples (36%) done (elapsed 1.29 s, remaining 2.28 s)
+postgres-server-client-1  | 1900000 of 5000000 tuples (38%) done (elapsed 1.40 s, remaining 2.29 s)
+postgres-server-client-1  | 2000000 of 5000000 tuples (40%) done (elapsed 1.47 s, remaining 2.20 s)
+postgres-server-client-1  | 2100000 of 5000000 tuples (42%) done (elapsed 1.53 s, remaining 2.11 s)
+postgres-server-client-1  | 2200000 of 5000000 tuples (44%) done (elapsed 1.60 s, remaining 2.03 s)
+postgres-server-client-1  | 2300000 of 5000000 tuples (46%) done (elapsed 1.71 s, remaining 2.01 s)
+postgres-server-client-1  | 2400000 of 5000000 tuples (48%) done (elapsed 1.77 s, remaining 1.92 s)
+postgres-server-client-1  | 2500000 of 5000000 tuples (50%) done (elapsed 1.83 s, remaining 1.83 s)
+postgres-server-client-1  | 2600000 of 5000000 tuples (52%) done (elapsed 1.96 s, remaining 1.80 s)
+postgres-server-client-1  | 2700000 of 5000000 tuples (54%) done (elapsed 2.02 s, remaining 1.72 s)
+postgres-server-client-1  | 2800000 of 5000000 tuples (56%) done (elapsed 2.08 s, remaining 1.64 s)
+postgres-server-client-1  | 2900000 of 5000000 tuples (58%) done (elapsed 2.14 s, remaining 1.55 s)
+postgres-server-client-1  | 3000000 of 5000000 tuples (60%) done (elapsed 2.26 s, remaining 1.50 s)
+postgres-server-client-1  | 3100000 of 5000000 tuples (62%) done (elapsed 2.32 s, remaining 1.42 s)
+postgres-server-client-1  | 3200000 of 5000000 tuples (64%) done (elapsed 2.39 s, remaining 1.34 s)
+postgres-server-client-1  | 3300000 of 5000000 tuples (66%) done (elapsed 2.51 s, remaining 1.29 s)
+postgres-server-client-1  | 3400000 of 5000000 tuples (68%) done (elapsed 2.57 s, remaining 1.21 s)
+postgres-server-client-1  | 3500000 of 5000000 tuples (70%) done (elapsed 2.64 s, remaining 1.13 s)
+postgres-server-client-1  | 3600000 of 5000000 tuples (72%) done (elapsed 2.70 s, remaining 1.05 s)
+postgres-server-client-1  | 3700000 of 5000000 tuples (74%) done (elapsed 2.85 s, remaining 1.00 s)
+postgres-server-client-1  | 3800000 of 5000000 tuples (76%) done (elapsed 2.91 s, remaining 0.92 s)
+postgres-server-client-1  | 3900000 of 5000000 tuples (78%) done (elapsed 2.97 s, remaining 0.84 s)
+postgres-server-client-1  | 4000000 of 5000000 tuples (80%) done (elapsed 3.08 s, remaining 0.77 s)
+postgres-server-client-1  | 4100000 of 5000000 tuples (82%) done (elapsed 3.14 s, remaining 0.69 s)
+postgres-server-client-1  | 4200000 of 5000000 tuples (84%) done (elapsed 3.21 s, remaining 0.61 s)
+postgres-server-client-1  | 4300000 of 5000000 tuples (86%) done (elapsed 3.28 s, remaining 0.53 s)
+postgres-server-client-1  | 4400000 of 5000000 tuples (88%) done (elapsed 3.39 s, remaining 0.46 s)
+postgres-server-client-1  | 4500000 of 5000000 tuples (90%) done (elapsed 3.47 s, remaining 0.39 s)
+postgres-server-client-1  | 4600000 of 5000000 tuples (92%) done (elapsed 3.54 s, remaining 0.31 s)
+postgres-server-client-1  | 4700000 of 5000000 tuples (94%) done (elapsed 3.60 s, remaining 0.23 s)
+postgres-server-client-1  | 4800000 of 5000000 tuples (96%) done (elapsed 3.72 s, remaining 0.16 s)
+postgres-server-client-1  | 4900000 of 5000000 tuples (98%) done (elapsed 3.78 s, remaining 0.08 s)
+postgres-server-client-1  | 5000000 of 5000000 tuples (100%) done (elapsed 3.85 s, remaining 0.00 s)
+postgres-server-client-1  | vacuuming...
+postgres-server-client-1  | creating primary keys...
+postgres-server           | 2024-04-06 23:17:09.557 CEST [23] LOG:  checkpoints are occurring too frequently (16 seconds apart)
+postgres-server           | 2024-04-06 23:17:09.557 CEST [23] HINT:  Consider increasing the configuration parameter "max_wal_size".
+postgres-server           | 2024-04-06 23:17:09.557 CEST [23] LOG:  checkpoint starting: wal
+postgres-server-client-1  | done in 6.24 s (drop tables 0.00 s, create tables 0.01 s, client-side generate 4.04 s, vacuum 0.22 s, primary keys 1.97 s).
+1712438230 postgres-server-client-1  | pgbench (15.3 (Debian 15.3-1.pgdg120+1), server 15.4 (Ubuntu 15.4-1.pgdg22.04+1))
+postgres-server-client-1  | starting vacuum...end.
+postgres-server           | 2024-04-06 23:17:49.859 CEST [23] LOG:  checkpoint complete: wrote 1007 buffers (6.1%); 0 WAL file(s) added, 0 removed, 33 recycled; write=39.886 s, sync=0.073 s, total=40.302 s; sync files=320, longest=0.021 s, average=0.001 s; distance=539652 kB, estimate=539652 kB
+postgres-server           | 2024-04-06 23:17:57.229 CEST [23] LOG:  checkpoint starting: wal
+postgres-server           | 2024-04-06 23:18:41.114 CEST [23] LOG:  checkpoint complete: wrote 1629 buffers (9.9%); 0 WAL file(s) added, 0 removed, 33 recycled; write=43.516 s, sync=0.042 s, total=43.886 s; sync files=23, longest=0.022 s, average=0.002 s; distance=536605 kB, estimate=539347 kB
+postgres-server           | 2024-04-06 23:18:49.512 CEST [23] LOG:  checkpoint starting: wal
+postgres-server           | 2024-04-06 23:19:40.040 CEST [23] LOG:  checkpoint complete: wrote 1123 buffers (6.9%); 0 WAL file(s) added, 0 removed, 33 recycled; write=50.094 s, sync=0.070 s, total=50.528 s; sync files=27, longest=0.045 s, average=0.003 s; distance=540646 kB, estimate=540646 kB
+postgres-server           | 2024-04-06 23:19:49.519 CEST [23] LOG:  checkpoint starting: wal
+postgres-server           | 2024-04-06 23:20:45.195 CEST [23] LOG:  checkpoint complete: wrote 913 buffers (5.6%); 0 WAL file(s) added, 0 removed, 33 recycled; write=55.262 s, sync=0.050 s, total=55.677 s; sync files=20, longest=0.034 s, average=0.003 s; distance=540696 kB, estimate=540696 kB
+postgres-server           | 2024-04-06 23:20:56.107 CEST [23] LOG:  checkpoint starting: wal
+postgres-server           | 2024-04-06 23:21:56.559 CEST [23] LOG:  checkpoint complete: wrote 851 buffers (5.2%); 0 WAL file(s) added, 0 removed, 33 recycled; write=60.048 s, sync=0.043 s, total=60.452 s; sync files=16, longest=0.030 s, average=0.003 s; distance=540652 kB, estimate=540692 kB
+postgres-server           | 2024-04-06 23:22:08.236 CEST [23] LOG:  checkpoint starting: wal
+1712438538 postgres-server-client-1  | transaction type: <builtin: TPC-B (sort of)>
+1712438538 postgres-server-client-1  | scaling factor: 50
+1712438538 postgres-server-client-1  | query mode: simple
+1712438538 postgres-server-client-1  | number of clients: 10
+1712438538 postgres-server-client-1  | number of threads: 1
+1712438538 postgres-server-client-1  | maximum number of tries: 1
+1712438538 postgres-server-client-1  | number of transactions per client: 50000
+1712438538 postgres-server-client-1  | number of transactions actually processed: 500000/500000
+1712438538 postgres-server-client-1  | number of failed transactions: 0 (0.000%)
+1712438538 postgres-server-client-1  | latency average = 6.157 ms
+1712438538 postgres-server-client-1  | initial connection time = 28.980 ms
+1712438538 postgres-server-client-1  | tps = 1624.118144 (without initial connection time)
+Aborting on container exit...
+1712438538 postgres-server-client-1 exited with code 0
+ Container postgres-server-client-1  Stopping
+ Container postgres-server-client-1  Stopped
+ Container postgres-server  Stopping
+ Container postgres-server  Stopped
+
+
+Ended at Sat, 06 Apr 2024 23:22:28 +0200
