@@ -63,7 +63,14 @@ For generating new energy data to use with this artifact, an AMD CPU is required
 
 ### Software requirements
 
-For running the notebook, Python 3.10 is required. The packages used can be installed with *pip*:
+For running the notebook, Python 3.10 is required. It is recommended to use a clean Python virtual environment
+
+```
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Then, the necessary libraries can be installed with *pip*:
 
 ```
 pip install -r requirements.txt
